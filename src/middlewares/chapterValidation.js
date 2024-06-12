@@ -18,7 +18,7 @@ const validateChapter = [
         }),
     body('subjectId')
         .notEmpty().withMessage('Subject ID is required.')
-        .isInt().withMessage('Subject ID must be an integer.'),
+        .isString().withMessage('Subject ID must be an String.'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
