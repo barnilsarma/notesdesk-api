@@ -9,7 +9,7 @@ const validateSubject = [
         .isString().withMessage('Sub must be a string.'),
     body('libraryId')
         .notEmpty().withMessage('Library ID is required.')
-        .isInt().withMessage('Library ID must be an integer.'),
+        .isString().withMessage('Library ID must be an string.'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
