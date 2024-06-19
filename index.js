@@ -31,7 +31,7 @@ app.put('/chapter/delete/:id', controllers.chapter.deleteChap);
 
 
 app.get('/', (req, res) => {
-    res.send("Hello world");
+    res.status(200).send("Hello world");
 });
 
 app.listen(process.env.PORT, () => {
