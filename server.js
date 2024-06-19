@@ -3,12 +3,15 @@ import * as controllers from "./src/controllers/index.js";
 import * as middlewares from "./src/middlewares/index.js";
 import dotenv from 'dotenv';
 import cors from "cors";
-
+import bodyParser from "body-parser";
 const app = express();
 app.use(express.json());
+
 //
 dotenv.config();
-app.use(cors({ origin: `${process.env.FRONTEND_URL}` }));
+app.use(cors({ origin: `${process.env.FRONTEND_URL}`, methods: ['GET', 'POST', 'PUT', 'DELETE'] }));
+app.use(bodyParser.json({ limit: '100mb' })); // For JSON requests
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: false }));
 
 app.post('/library/add', middlewares.validateLibrary, controllers.library.create);
 app.get('/library/read', controllers.library.read);
