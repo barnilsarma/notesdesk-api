@@ -2,14 +2,12 @@ import prisma from "../../../prisma/index.js";
 
 const create = async (req, res) => {
 
-    const action = await prisma.chapter.create({
+    const action = await prisma.page.create({
         data: {
-            user: req.body.user,
-            title: req.body.title,
-            // pages: req.body.pages,
-            Subject: {
+            image: req.body.image,
+            Chapter: {
                 connect: {
-                    id: req.body.subjectId
+                    id: req.body.chapterId
                 }
             }
         }
