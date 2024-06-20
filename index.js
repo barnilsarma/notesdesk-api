@@ -28,7 +28,7 @@ app.get('/chapter/read/:subjectId', controllers.chapter.read);
 app.put('/chapter/update/:id', controllers.chapter.update);
 app.put('/chapter/delete/:id', controllers.chapter.deleteChap);
 //
-app.post('/page/add', controllers.page.create);
+app.post('/page/add',middlewares.validatePage, controllers.page.create);
 app.get('/page/read/:chapterId', controllers.page.read);
 app.put('/page/delete/:id', controllers.page.deletePage)
 

@@ -7,15 +7,6 @@ const validateChapter = [
     body('title')
         .notEmpty().withMessage('Title is required.')
         .isString().withMessage('Title must be a string.'),
-    // body('pages')
-    //     .notEmpty().withMessage('Pages are required.')
-    //     .isArray().withMessage('Pages must be an array.')
-    //     .custom((value) => {
-    //         if (!value.every(page => typeof page === 'string')) {
-    //             throw new Error('Pages must be an array of strings.');
-    //         }
-    //         return true;
-    //     }),
     body('subjectId')
         .notEmpty().withMessage('Subject ID is required.')
         .isString().withMessage('Subject ID must be an String.'),
