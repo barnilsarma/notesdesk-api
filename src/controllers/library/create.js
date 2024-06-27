@@ -7,7 +7,7 @@ const create = async (req, res) => {
                 lib: req.body.lib
             }
         });
-        res.status(200).send("done");
+        res.status(200).send(action);
     }
     catch (err) {
         res.status(500).send(err);

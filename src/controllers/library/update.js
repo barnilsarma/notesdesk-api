@@ -11,7 +11,7 @@ const update = async (req, res) => {
                 lib: req.body?.lib
             }
         });
-        res.status(200).send("Successfully updated!!");
+        res.status(200).send(upd);
     }
     catch (err) {
         res.status(500).send(err);

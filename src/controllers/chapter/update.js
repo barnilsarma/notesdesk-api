@@ -9,10 +9,9 @@ const update = async (req, res) => {
             data: {
                 user: req.body?.user,
                 title: req.body?.title,
-                pages: req.body?.pages
             }
         });
-        res.status(200).send("Successfully updated!!");
+        res.status(200).send(upd);
     }
     catch (err) {
         res.status(500).send(err);
