@@ -6,7 +6,6 @@ const create = async (req, res) => {
         data: {
             user: req.body.user,
             title: req.body.title,
-            // pages: req.body.pages,
             Subject: {
                 connect: {
                     id: req.body.subjectId
@@ -14,7 +13,7 @@ const create = async (req, res) => {
             }
         }
     });
-    res.status(200).send("done");
+    res.status(200).send(action.data);
 }
 
 export default create;

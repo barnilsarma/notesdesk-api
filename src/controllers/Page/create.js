@@ -1,13 +1,13 @@
 import prisma from "../../../prisma/index.js";
+
 const create = async (req, res) => {
     try {
-        const action = await prisma.subject.create({
+        const action = await prisma.pages.create({
             data: {
-                user: req.body?.user,
-                sub: req.body.sub,
-                Library: {
+                page: req.body.page,
+                Chapter: {
                     connect: {
-                        id: req.body.libraryId
+                        id: req.body.chapterId
                     }
                 }
             }
@@ -15,7 +15,7 @@ const create = async (req, res) => {
         res.status(200).send(action);
     }
     catch (err) {
-        res.status(500).send(err);
+        res.status(500).send({ message: err });
     }
 }
 
